@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="carousel.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -213,14 +215,14 @@
         <!-- End Nav -->
 
         <!-- Content -->
-        <div class="myapp-content container-fluid p-0 m-0">
+        <div class="myapp-content container-fluid m-0">
             <div class="row">
                 <div class="myapp-addvertise col-xl-2">
                     <!-- Quảng cáo -->
                 </div>
                 <div class="myapp-content-body col-12 col-xl-8">
                     <!-- Slider -->
-                    <div class="slider-container">
+                    <div class="slider-container rounded-bottom-5">
                         <div class="slides">
                             <div class="slide">
                                 <div class="slide-bg"></div>
@@ -305,6 +307,132 @@
 
                     </script>
                     <!-- End Slider -->
+                    
+                    <!-- Carousel 6 truyện một lúc -->
+                    <div class="custom-carousel-container container-fluid m-0 p-0 mt-4">
+                        <div class="custom-carousel">
+                            <button class="custom-carousel-prev">❮</button>
+                            <div class="custom-carousel-wrapper">
+                                <div class="custom-carousel-track">
+                                    <div class="custom-carousel-card rounded-3">Card 1</div>
+                                    <div class="custom-carousel-card rounded-3">Card 2</div>
+                                    <div class="custom-carousel-card rounded-3">Card 3</div>
+                                    <div class="custom-carousel-card rounded-3">Card 4</div>
+                                    <div class="custom-carousel-card rounded-3">Card 5</div>
+                                    <div class="custom-carousel-card rounded-3">Card 6</div>
+                                    <div class="custom-carousel-card rounded-3">Card 7</div>
+                                    <div class="custom-carousel-card rounded-3">Card 8</div>
+                                    <div class="custom-carousel-card rounded-3">Card 9</div>
+                                    <div class="custom-carousel-card rounded-3">Card 10</div>
+                                    <div class="custom-carousel-card rounded-3">Card 11</div>
+                                    <div class="custom-carousel-card rounded-3">Card 12</div>
+                                    <div class="custom-carousel-card rounded-3">Card 13</div>
+                                </div>
+                            </div>
+                            <button class="custom-carousel-next">❯</button>
+                        </div>
+                        <script>
+                            const customTrack = document.querySelector(".custom-carousel-track");
+                            const customPrev = document.querySelector(".custom-carousel-prev");
+                            const customNext = document.querySelector(".custom-carousel-next");
+                            const customWrapper = document.querySelector(".custom-carousel-wrapper");
+                            let customCards = [...document.querySelectorAll(".custom-carousel-card")];
+                    
+                            let customIndex = 0;
+                            let isDragging = false;
+                            let startX = 0, currentX = 0, moveX = 0, lastTransform = 0;
+                    
+                            // Sao chép các phần tử đầu vào cuối để tạo hiệu ứng vòng lặp
+                            customCards.forEach(card => {
+                                const clone = card.cloneNode(true);
+                                customTrack.appendChild(clone);
+                            });
+                            customCards = [...document.querySelectorAll(".custom-carousel-card")];
+                    
+                            function getCustomCardWidth() {
+                                return customCards[0].offsetWidth + 24; // 190px + 24px (gap)
+                            }
+                    
+                            function updateCustomCarousel() {
+                                const cardWidth = getCustomCardWidth();
+                                customTrack.style.transition = "transform 0.5s ease-in-out";
+                                customTrack.style.transform = `translateX(-${customIndex * cardWidth}px)`;
+                            }
+                    
+                            function checkCustomLoop() {
+                                const cardWidth = getCustomCardWidth();
+                                const totalCards = customCards.length / 2; // Vì đã sao chép phần tử
+                                if (customIndex >= totalCards) {
+                                    customTrack.style.transition = "none";
+                                    customIndex = 0;
+                                    customTrack.style.transform = `translateX(-${customIndex * cardWidth}px)`;
+                                } else if (customIndex < 0) {
+                                    customTrack.style.transition = "none";
+                                    customIndex = totalCards - 1;
+                                    customTrack.style.transform = `translateX(-${customIndex * cardWidth}px)`;
+                                }
+                            }
+                    
+                            function startCustomDragging(e) {
+                                isDragging = true;
+                                startX = e.pageX || e.touches[0].pageX;
+                                lastTransform = parseFloat(getComputedStyle(customTrack).transform.split(",")[4]) || 0;
+                                customTrack.style.transition = "none";
+                            }
+                    
+                            function customDragging(e) {
+                                if (!isDragging) return;
+                                currentX = e.pageX || e.touches[0].pageX;
+                                moveX = currentX - startX;
+                                customTrack.style.transform = `translateX(${lastTransform + moveX}px)`;
+                            }
+                    
+                            function stopCustomDragging() {
+                                if (!isDragging) return;
+                                isDragging = false;
+                                customTrack.style.transition = "transform 0.5s ease-in-out";
+                    
+                                const cardWidth = getCustomCardWidth();
+                                let newIndex = Math.round(Math.abs(lastTransform + moveX) / cardWidth);
+                                customIndex = newIndex;
+                    
+                                updateCustomCarousel();
+                                checkCustomLoop();
+                            }
+                    
+                            function nextCustomSlide() {
+                                customIndex++;
+                                updateCustomCarousel();
+                                setTimeout(checkCustomLoop, 500);
+                            }
+                    
+                            function prevCustomSlide() {
+                                customIndex--;
+                                updateCustomCarousel();
+                                setTimeout(checkCustomLoop, 500);
+                            }
+                    
+                            // Gán sự kiện
+                            customNext.addEventListener("click", nextCustomSlide);
+                            customPrev.addEventListener("click", prevCustomSlide);
+                    
+                            customWrapper.addEventListener("mousedown", startCustomDragging);
+                            customWrapper.addEventListener("mousemove", customDragging);
+                            customWrapper.addEventListener("mouseup", stopCustomDragging);
+                            customWrapper.addEventListener("mouseleave", stopCustomDragging);
+                            customWrapper.addEventListener("touchstart", startCustomDragging);
+                            customWrapper.addEventListener("touchmove", customDragging);
+                            customWrapper.addEventListener("touchend", stopCustomDragging);
+                    
+                            // Cập nhật khi resize
+                            window.addEventListener("resize", updateCustomCarousel);
+                    
+                            // Khởi động
+                            updateCustomCarousel();
+                        </script>
+                    </div>
+                    
+                    <!-- End Carousel -->
                 </div>
                 <div class="myapp-addvertise col-xl-2">
                     <!-- Quảng cáo -->
@@ -312,7 +440,9 @@
             </div>
             
         </div>
-        <footer class="container-fluid" style="border: 1px solid red;">Footer</footer>
+        <footer class="container-fluid" style="border: 1px solid red;">
+
+        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

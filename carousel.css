@@ -1,0 +1,46 @@
+.custom-carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.custom-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+}
+
+.custom-carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+.custom-carousel-card {
+    width: 190px;
+    height: 200px;
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.custom-carousel-prev, .custom-carousel-next {
+    background: rgba(199, 198, 198, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 20%;
+}
+
+.custom-carousel-prev { left: 5px; }
+.custom-carousel-next { right: 5px; }
