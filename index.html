@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="myapp-wrapper container-fluid p-0 m-0">
+        <!-- Nav -->
+        <nav class="myapp-nav container-fluid border-bottom">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <!-- Logo -->
+                    <div class="myapp-logo p-0 m-0 col-2 d-flex align-items-center justify-content-center">
+                        <img src="./img/myapp-logo.png" alt="">
+                    </div>
+                    <!-- Filter -->
+                    <div class="myapp-filter col-lg-5 d-lg-flex align-items-center justify-content-center d-none">
+                        <ul class="d-flex align-items-center justify-content-between gap-3 list-unstyled m-0 w-100 h-100">
+                            <li class="h-100 d-flex align-items-center justify-content-center">
+                                <div class="dropdown position-relative h-100 d-flex align-items-center justify-content-center">
+                                    <span class="fs-5 dropdown-toggle list-unstyled cursor-pointer fw-bold h-100 d-flex align-items-center justify-content-center">
+                                        Danh sách
+                                    </span>
+                                    <ul class="dropdown-menu position-absolute top-100 start-50 translate-middle-x">
+                                        <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Truyện mới</a></li>
+                                        <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Tryện cho nam</a></li>
+                                        <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Truyện cho nữ</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="h-100 d-flex align-items-center justify-content-center">
+                                <div class="dropdown position-relative h-100 d-flex align-items-center justify-content-center">
+                                    <span class="fs-5 dropdown-toggle list-unstyled cursor-pointer fw-bold h-100 d-flex align-items-center justify-content-center">
+                                        Thể loại
+                                    </span>
+                                    <div class="dropdown-menu position-absolute top-100 start-50 translate-middle-x" style="min-width: 700px;">
+                                        <div class="container-fluid d-flex align-items-center justify-content-center">
+                                            <ul class="row list-unstyled w-100 h-100">
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Tất cả   
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Action 
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Adventure  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Chuyển Sinh  
+                                                    </a>    
+                                                </li>
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Comedy  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Cooking  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Doujinshi  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Drama  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Đam Mỹ  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Fantasy  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Gender Bender  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Historical  
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Horror  
+                                                    </a>    
+                                                </li>
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Isekai
+                                                    </a>    
+                                                </li>   
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Live action  
+                                                    </a>    
+                                                </li>
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Manga
+                                                    </a>    
+                                                </li>  
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Manhua  
+                                                    </a>    
+                                                </li>  
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Manhwa  
+                                                    </a>    
+                                                </li>  
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Martial Arts  
+                                                    </a>    
+                                                </li>  
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Mecha
+                                                    </a>    
+                                                </li>
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Mystery
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Romance
+                                                    </a>    
+                                                </li> 
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        School Life
+                                                    </a>    
+                                                </li>
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Sports
+                                                    </a>    
+                                                </li>
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Tragedy
+                                                    </a>    
+                                                </li>   
+                                                <li class="col-3">
+                                                    <a href="#" class="text-decoration-none d-flex align-items-center justify-content-center text-dark">
+                                                        Truyện Màu
+                                                    </a>    
+                                                </li>            
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="fs-5 text-decoration-none fw-bold d-flex align-items-center justify-content-center text-dark">
+                                    Tìm nâng cao
+                                </a> 
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Search -->
+                    <div class="myapp-search col-lg-3 col-8 d-flex align-items-center justify-content-center my-3">
+                        <form class="myapp-search" action="#">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-0 shadow-none rounded-start-5 rounded-end-0" placeholder="Tìm kiếm truyện...">
+                                <button class="btn border-0 rounded-start-0 rounded-end-5"><img class="myapp-nav-icon" src="./img/icon-search.png" alt=""></button>
+                            </div>  
+                        </form>                        
+                    </div>
+                    <!-- User -->
+                    <div class="myapp-user col-2 d-flex align-items-center justify-content-center">
+                        <div class="dropdown position-relative d-flex align-items-center justify-content-center gap-2">
+                            <img class="myapp-nav-icon" src="./img/icon-user.png" alt="user-icon">
+                            <span class="dropdown-toggle list-unstyled cursor-pointer">
+                                Tài khoản
+                            </span>
+                            <ul class="dropdown-menu position-absolute top-100 start-50 translate-middle-x">
+                                <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Hồ sơ</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Cập nhập</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Yêu thích</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Upload</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center justify-content-center" href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End Nav -->
+
+        <!-- Content -->
+        <div class="myapp-content container-fluid p-0 m-0">
+            <div class="row">
+                <div class="myapp-addvertise col-xl-2">
+                    <!-- Quảng cáo -->
+                </div>
+                <div class="myapp-content-body col-12 col-xl-8">
+                    <!-- Slider -->
+                    <div class="slider-container">
+                        <div class="slides">
+                            <div class="slide">
+                                <div class="slide-bg"></div>
+                                <a href="#"><img src="./img/img1.png" alt="Ảnh 1"></a>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-bg"></div>
+                                <a href="#"><img src="./img/img2.png" alt="Ảnh 2"></a>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-bg"></div>
+                                <a href="#"><img src="./img/img3.png" alt="Ảnh 3"></a>
+                            </div>
+                        </div>
+                    
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    
+                        <div class="dots-container"></div>
+                    </div>                    
+                        
+                    <script>
+                        const slides = document.querySelector('.slides');
+                        const slideElements = document.querySelectorAll('.slide');
+                        const prevButton = document.querySelector('.prev');
+                        const nextButton = document.querySelector('.next');
+                        const dotsContainer = document.querySelector('.dots-container');
+
+                        let currentIndex = 0;
+                        let autoSlide;
+
+                        /* Thêm ảnh nền mờ */
+                        document.querySelectorAll('.slide').forEach(slide => {
+                            let imgSrc = slide.querySelector('img').src;
+                            slide.querySelector('.slide-bg').style.backgroundImage = `url(${imgSrc})`;
+                        });
+
+                        function updateSlider() {
+                            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                            document.querySelectorAll('.dot').forEach((dot, index) => {
+                                dot.classList.toggle('active', index === currentIndex);
+                            });
+                        }
+
+                        function nextSlide() {
+                            currentIndex = (currentIndex + 1) % slideElements.length;
+                            updateSlider();
+                        }
+
+                        function prevSlide() {
+                            currentIndex = (currentIndex - 1 + slideElements.length) % slideElements.length;
+                            updateSlider();
+                        }
+
+                        function startAutoSlide() {
+                            autoSlide = setInterval(nextSlide, 3000);
+                        }
+
+                        function stopAutoSlide() {
+                            clearInterval(autoSlide);
+                        }
+
+                        /* Tạo dots */
+                        slideElements.forEach((_, index) => {
+                            const dot = document.createElement('div');
+                            dot.classList.add('dot');
+                            if (index === 0) dot.classList.add('active');
+                            dot.addEventListener('click', () => {
+                                currentIndex = index;
+                                updateSlider();
+                            });
+                            dotsContainer.appendChild(dot);
+                        });
+
+                        nextButton.addEventListener('click', nextSlide);
+                        prevButton.addEventListener('click', prevSlide);
+
+                        document.querySelector('.slider-container').addEventListener('mouseover', stopAutoSlide);
+                        document.querySelector('.slider-container').addEventListener('mouseout', startAutoSlide);
+
+                        startAutoSlide();
+
+                    </script>
+                    <!-- End Slider -->
+                </div>
+                <div class="myapp-addvertise col-xl-2">
+                    <!-- Quảng cáo -->
+                </div>
+            </div>
+            
+        </div>
+        <footer class="container-fluid" style="border: 1px solid red;">Footer</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
