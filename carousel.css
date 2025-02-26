@@ -20,12 +20,65 @@
 
 .custom-carousel-card {
     width: 190px;
-    height: 200px;
+    height: 260px; /* Điều chỉnh chiều cao nếu cần */
     background: lightgray;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* Thêm position relative để chứa các phần tử absolute */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%; /* Điều chỉnh chiều cao ảnh */
+    object-fit: cover;
+    border-radius: 10px; /* Bo tròn góc ảnh */
+}
+
+.card-body {
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 100%; /* Điều chỉnh chiều rộng */
+    margin: 0 auto; /* Căn giữa */
+    position: absolute;
+    bottom: -9px; /* Điều chỉnh vị trí từ dưới lên */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Dịch chuyển để căn giữa chính xác */
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end; /* Đưa nội dung xuống dưới */
+    background: rgba(0, 0, 0, 0); /* Màu nền trong suốt */
+    padding-bottom: 20px; /* Thêm khoảng cách từ dưới lên */
+}
+.card-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-body a {
+    text-decoration: none;
+    color: #e9e9e9;
+    font-size: 1em; /* Điều chỉnh kích thước font */
+    font-weight: bold; /* Làm đậm chữ */
+}
+
+.card-body span {
+    color: #ffffff;
+    font-size: 0.8em; /* Điều chỉnh kích thước font */
 }
 
 .custom-carousel-prev, .custom-carousel-next {
