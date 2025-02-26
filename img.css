@@ -1,0 +1,6 @@
+.img-cover {
+    min-width: 300px;
+    min-height: 200px;
+    padding: 2px;
+    object-fit: cover; /* Ảnh sẽ fill đầy khung */
+}

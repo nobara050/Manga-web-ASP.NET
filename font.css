@@ -1,0 +1,67 @@
+
+.text-shadow {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: #333;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+ 
+}
+.text-bg-custom {
+    background: rgba(255, 255, 255, 0.2); /* Màu nền trong suốt */
+    color: #ffffff; /* Màu chữ trắng */
+    backdrop-filter: blur(10px); /* Hiệu ứng mờ nền */
+    border-radius: 10px; /* Bo góc */
+    padding: 10px 15px; /* Canh chỉnh padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Viền nhẹ */
+}
+
+.custom-underline {
+    display: inline-block;
+    border-bottom: 2px solid red; 
+    padding-bottom: 1px; 
+}
+
+.glitter-text {
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0051, #00ff7bdd, #ff0059a4, #f200ff);
+    background-size: 400% 400%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: glitter 6s infinite linear;
+}
+
+
+.glowing-border {
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    outline: 2px solid transparent;
+    outline-offset: -3px; /* Để viền nằm đúng vị trí */
+    animation: glowing 5s linear infinite;
+}
+
+@keyframes glowing {
+    0% { outline-color: rgba(120, 192, 225, 0.962); }
+    25% { outline-color: rgba(60, 217, 46, 0.914); }
+    50% { outline-color: yellow; }
+    75% { outline-color: rgb(31, 225, 218); }
+    100% { outline-color: rgb(255, 0, 191); }
+}
+
+
+@keyframes glitter {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.modern-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #040722;
+}
+
